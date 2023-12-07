@@ -6,15 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Category extends Model
+class Genre extends Model
 {
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'id',
         'name',
-        'description',
         'is_active',
+        'created_at',
     ];
 
     public $incrementing = false;
@@ -25,9 +25,13 @@ class Category extends Model
         'deleted_at' => 'datetime',
     ];
 
-    public function genres()
+    public function categories()
     {
-        return $this->belongsToMany(Genre::class);
+        return $this->belongsToMany(Category::class);
     }
 
+    public function videos()
+    {
+        return $this->belongsToMany(Video::class);
+    }
 }

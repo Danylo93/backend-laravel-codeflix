@@ -2,19 +2,19 @@
 
 namespace App\Models;
 
+use App\Models\Traits\UuidTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Category extends Model
+class ImageVideo extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, UuidTrait;
+
+    protected $table = 'images_video';
 
     protected $fillable = [
-        'id',
-        'name',
-        'description',
-        'is_active',
+        'path',
+        'type',
     ];
 
     public $incrementing = false;
@@ -25,9 +25,8 @@ class Category extends Model
         'deleted_at' => 'datetime',
     ];
 
-    public function genres()
+    public function video()
     {
-        return $this->belongsToMany(Genre::class);
+        return $this->belongsTo(Video::class);
     }
-
 }
