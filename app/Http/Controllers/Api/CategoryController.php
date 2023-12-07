@@ -48,4 +48,45 @@ class CategoryController extends Controller
                 ]
             ]);
     }
+    public function store(StoreCategoryRequest $request, CreateCategoryUseCase $useCase)
+    {
+        $response = $useCase->execute(
+            input: new CategoryCreateInputDto(
+                name: $request->name,
+                description: $request->description ?? '',
+                isActive: (bool) $request->is_active ?? true,
+            )
+        );
+
+        return (new CategoryResource($response))
+            ->response()
+            ->setStatusCode(Response::HTTP_CREATED);
+    }
+
+    public function show(ListCategoryUseCase $useCase, $id)
+    {
+        $category = $useCase->execute(new CategoryInputDto($id));
+
+        return (new CategoryResource($category))->response();
+    }
+
+    public function update(UpdateCategoryRequest $request, UpdateCategoryUseCase $useCase, $id)
+    {
+        $response = $useCase->execute(
+            input: new CategoryUpdateInputDto(
+                id: $id,
+                name: $request->name,
+            )
+        );
+
+        return (new CategoryResource($response))
+            ->response();
+    }
+
+    public function destroy(DeleteCategoryUseCase $useCase, $id)
+    {
+        $useCase->execute(new CategoryInputDto($id));
+
+        return response()->noContent();
+    }
 }
