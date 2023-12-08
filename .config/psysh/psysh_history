@@ -3,3 +3,5 @@
 \App\Models\Category::factory()->count(10)->create();
 \App\Models\CastMember::factory()->count(100)->create();
 \App\Models\Video::factory()->count(10)->create();
+\App\Models\Video::factory()->count(90)->create();
+exit

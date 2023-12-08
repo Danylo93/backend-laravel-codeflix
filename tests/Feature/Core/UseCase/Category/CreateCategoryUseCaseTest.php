@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Core\UseCaseCategory;
+namespace Tests\Feature\Core\UseCase\Category;
 
 use App\Models\Category as Model;
 use App\Repositories\Eloquent\CategoryEloquentRepository;
