@@ -51,9 +51,10 @@ class Handler extends ExceptionHandler
         if ($e instanceof EntityValidationException)
             return $this->showError($e->getMessage(), Response::HTTP_INTERNAL_SERVER_ERROR);
 
+        if ($e instanceof NotificationException)
+            return $this->showError($e->getMessage(), Response::HTTP_UNPROCESSABLE_ENTITY); // ok => HTTP_INTERNAL_SERVER_ERROR
+
         return parent::render($request, $e);
-        // if ($e instanceof NotificationException)
-        //     return $this->showError($e->getMessage(), Response::HTTP_UNPROCESSABLE_ENTITY); // ok => HTTP_INTERNAL_SERVER_ERROR
     }
 
     private function showError(string $message, int $statusCode)
