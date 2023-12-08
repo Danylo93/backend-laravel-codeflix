@@ -14,4 +14,4 @@
 	process = git-lfs filter-process
 	required = true
 [credential]
-	helper = "!f() { /var/www/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/node /tmp/vscode-remote-containers-e437925b-549f-4402-b625-b6f0960fd71c.js git-credential-helper $*; }; f"
+	helper = "!f() { /var/www/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/node /tmp/vscode-remote-containers-c8a482d7-6c01-4309-ae69-690e89fbcbca.js git-credential-helper $*; }; f"
