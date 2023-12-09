@@ -11,7 +11,7 @@ use Tests\Traits\WithoutMiddlewareTrait;
 
 class CategoryApiTest extends TestCase
 {
-
+    use WithoutMiddlewareTrait;
 
     protected $endpoint = '/api/categories';
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cdaff335623264c7d2f801a1f4ca5e45",
+    "content-hash": "26dc1c5aff7c14921f73ab6ed5756efe",
     "packages": [
         {
             "name": "brick/math",
@@ -3889,6 +3889,65 @@
             "time": "2022-10-12T17:22:51+00:00"
         },
         {
+            "name": "robsontenorio/laravel-keycloak-guard",
+            "version": "1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/robsontenorio/laravel-keycloak-guard.git",
+                "reference": "042483a167bcdc74321dd49cb30b79c6531109bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/robsontenorio/laravel-keycloak-guard/zipball/042483a167bcdc74321dd49cb30b79c6531109bc",
+                "reference": "042483a167bcdc74321dd49cb30b79c6531109bc",
+                "shasum": ""
+            },
+            "require": {
+                "firebase/php-jwt": "^6.3",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.10",
+                "nunomaduro/collision": "^6.3",
+                "orchestra/testbench": "^7.7",
+                "pestphp/pest": "^1.22",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "KeycloakGuard\\KeycloakGuardServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "KeycloakGuard\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Robson Tenório"
+                }
+            ],
+            "description": "🔑 Simple Keycloak Guard for Laravel",
+            "homepage": "https://github.com/robsontenorio/laravel-keycloak-guard",
+            "keywords": [
+                "keycloak",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/robsontenorio/laravel-keycloak-guard/issues",
+                "source": "https://github.com/robsontenorio/laravel-keycloak-guard/tree/1.4.2"
+            },
+            "time": "2023-04-27T12:41:47+00:00"
+        },
+        {
             "name": "spatie/laravel-google-cloud-storage",
             "version": "2.2.6",
             "source": {
@@ -6750,6 +6809,72 @@
                 "source": "https://github.com/hamcrest/hamcrest-php/tree/v2.0.1"
             },
             "time": "2020-07-09T08:09:16+00:00"
+        },
+        {
+            "name": "laravel/pint",
+            "version": "v1.13.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/pint.git",
+                "reference": "4157768980dbd977f1c4b4cc94997416d8b30ece"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/pint/zipball/4157768980dbd977f1c4b4cc94997416d8b30ece",
+                "reference": "4157768980dbd977f1c4b4cc94997416d8b30ece",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "ext-tokenizer": "*",
+                "ext-xml": "*",
+                "php": "^8.1.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.38.0",
+                "illuminate/view": "^10.30.1",
+                "laravel-zero/framework": "^10.3.0",
+                "mockery/mockery": "^1.6.6",
+                "nunomaduro/larastan": "^2.6.4",
+                "nunomaduro/termwind": "^1.15.1",
+                "pestphp/pest": "^2.24.2"
+            },
+            "bin": [
+                "builds/pint"
+            ],
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "App\\": "app/",
+                    "Database\\Seeders\\": "database/seeders/",
+                    "Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nuno Maduro",
+                    "email": "enunomaduro@gmail.com"
+                }
+            ],
+            "description": "An opinionated code formatter for PHP.",
+            "homepage": "https://laravel.com",
+            "keywords": [
+                "format",
+                "formatter",
+                "lint",
+                "linter",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/pint/issues",
+                "source": "https://github.com/laravel/pint"
+            },
+            "time": "2023-12-05T19:43:12+00:00"
         },
         {
             "name": "laravel/sail",

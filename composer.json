@@ -16,10 +16,12 @@
         "php-amqplib/php-amqplib": "^3.2",
         "rakit/validation": "^1.4",
         "ramsey/uuid": "^4.7",
+        "robsontenorio/laravel-keycloak-guard": "^1.4",
         "spatie/laravel-google-cloud-storage": "^2.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
+        "laravel/pint": "^1.13",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^6.1",
