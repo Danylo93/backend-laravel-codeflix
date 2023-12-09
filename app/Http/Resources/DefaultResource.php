@@ -19,7 +19,7 @@ class DefaultResource extends JsonResource
                 $key = trim(strtolower(preg_replace('/[A-Z]/', '_$0', $key)));
 
                 return [
-                    $key => $value
+                    $key => $value,
                 ];
             });
     }

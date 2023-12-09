@@ -19,5 +19,5 @@ return [
         'exchange' => 'dlx',
         'queue_name' => 'videos',
         'exchange_producer' => 'amq.direct',
-    ]
+    ],
 ];

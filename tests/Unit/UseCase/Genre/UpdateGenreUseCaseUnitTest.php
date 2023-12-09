@@ -2,17 +2,13 @@
 
 namespace Tests\Unit\UseCase\Genre;
 
-use Core\UseCase\DTO\Genre\Update\{
-    GenreUpdateInputDto,
-    GenreUpdateOutputDto,
-};
 use Core\Domain\Entity\Genre as EntityGenre;
 use Core\Domain\Exception\NotFoundException;
-use Core\Domain\Repository\{
-    CategoryRepositoryInterface,
-    GenreRepositoryInterface
-};
+use Core\Domain\Repository\CategoryRepositoryInterface;
+use Core\Domain\Repository\GenreRepositoryInterface;
 use Core\Domain\ValueObject\Uuid as ValueObjectUuid;
+use Core\UseCase\DTO\Genre\Update\GenreUpdateInputDto;
+use Core\UseCase\DTO\Genre\Update\GenreUpdateOutputDto;
 use Core\UseCase\Genre\UpdateGenreUseCase;
 use Core\UseCase\Interfaces\TransactionInterface;
 use Mockery;
@@ -45,7 +41,7 @@ class UpdateGenreUseCaseUnitTest extends TestCase
     private function mockEntity(string $uuid)
     {
         $mockEntity = Mockery::mock(EntityGenre::class, [
-            'teste', new ValueObjectUuid($uuid), true, []
+            'teste', new ValueObjectUuid($uuid), true, [],
         ]);
         $mockEntity->shouldReceive('createdAt')->andReturn(date('Y-m-d H:i:s'));
         $mockEntity->shouldReceive('update')->times(1);
@@ -60,12 +56,12 @@ class UpdateGenreUseCaseUnitTest extends TestCase
 
         $mockRepository = Mockery::mock(stdClass::class, GenreRepositoryInterface::class);
         $mockRepository->shouldReceive('findById')
-                        ->once()
-                        ->with($uuid)
-                        ->andReturn($mockEntity);
+            ->once()
+            ->with($uuid)
+            ->andReturn($mockEntity);
         $mockRepository->shouldReceive('update')
-                        ->times($timesCalled)
-                        ->andReturn($mockEntity);
+            ->times($timesCalled)
+            ->andReturn($mockEntity);
 
         return $mockRepository;
     }
@@ -79,12 +75,12 @@ class UpdateGenreUseCaseUnitTest extends TestCase
         return $mockTransaction;
     }
 
-    private function mockCategoryRepository(string  $uuid)
+    private function mockCategoryRepository(string $uuid)
     {
         $mockCategoryRepository = Mockery::mock(stdClass::class, CategoryRepositoryInterface::class);
         $mockCategoryRepository->shouldReceive('getIdsListIds')
-                                ->once()
-                                ->andReturn([$uuid]);
+            ->once()
+            ->andReturn([$uuid]);
 
         return $mockCategoryRepository;
     }
@@ -92,7 +88,7 @@ class UpdateGenreUseCaseUnitTest extends TestCase
     private function mockUpdateInputDto(string $uuid, array $categoriesIds = [])
     {
         return Mockery::mock(GenreUpdateInputDto::class, [
-            $uuid, 'name to update', $categoriesIds
+            $uuid, 'name to update', $categoriesIds,
         ]);
     }
 

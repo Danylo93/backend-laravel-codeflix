@@ -4,10 +4,8 @@ namespace Tests\Unit\UseCase\Video;
 
 use Core\Domain\Enum\Rating;
 use Core\UseCase\Video\Create\CreateVideoUseCase;
-use Core\UseCase\Video\Create\DTO\{
-    CreateInputVideoDTO,
-    CreateOutputVideoDTO
-};
+use Core\UseCase\Video\Create\DTO\CreateInputVideoDTO;
+use Core\UseCase\Video\Create\DTO\CreateOutputVideoDTO;
 use Mockery;
 
 class CreateVideoUseCaseUnitTest extends BaseVideoUseCaseUnitTest

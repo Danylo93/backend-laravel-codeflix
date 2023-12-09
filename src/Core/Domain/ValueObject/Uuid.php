@@ -18,7 +18,6 @@ class Uuid
         return new self(RamseyUuid::uuid4()->toString());
     }
 
-
     public function __toString(): string
     {
         return $this->value;
@@ -26,7 +25,8 @@ class Uuid
 
     private function ensureIsValid(string $id): void
     {
-        if (!RamseyUuid::isValid($id))
+        if (! RamseyUuid::isValid($id)) {
             throw new InvalidArgumentException(sprintf('<%s> does not allow the value <%s>.', static::class, $id));
+        }
     }
 }

@@ -33,7 +33,7 @@ class CategoryEloquentRepository implements CategoryRepositoryInterface
 
     public function findById(string $categoryId): Category
     {
-        if (!$category = $this->model->find($categoryId)) {
+        if (! $category = $this->model->find($categoryId)) {
             throw new NotFoundException('Category Not Found');
         }
 
@@ -52,8 +52,9 @@ class CategoryEloquentRepository implements CategoryRepositoryInterface
     {
         $categories = $this->model
             ->where(function ($query) use ($filter) {
-                if ($filter)
+                if ($filter) {
                     $query->where('name', 'LIKE', "%{$filter}%");
+                }
             })
             ->orderBy('id', $order)
             ->get();
@@ -75,7 +76,7 @@ class CategoryEloquentRepository implements CategoryRepositoryInterface
 
     public function update(Category $category): Category
     {
-        if (!$categoryDb = $this->model->find($category->id())) {
+        if (! $categoryDb = $this->model->find($category->id())) {
             throw new NotFoundException('Category Not Found');
         }
 
@@ -92,7 +93,7 @@ class CategoryEloquentRepository implements CategoryRepositoryInterface
 
     public function delete(string $categoryId): bool
     {
-        if (!$categoryDb = $this->model->find($categoryId)) {
+        if (! $categoryDb = $this->model->find($categoryId)) {
             throw new NotFoundException('Category Not Found');
         }
 

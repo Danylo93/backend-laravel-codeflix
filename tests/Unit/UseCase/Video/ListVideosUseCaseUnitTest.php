@@ -15,7 +15,7 @@ use Tests\Unit\UseCase\UseCaseTrait;
 class ListVideosUseCaseUnitTest extends TestCase
 {
     use UseCaseTrait;
-    
+
     public function test_list_paginate()
     {
         $useCase = new ListVideosUseCase(
@@ -35,8 +35,8 @@ class ListVideosUseCaseUnitTest extends TestCase
     {
         $mockRepository = Mockery::mock(stdClass::class, VideoRepositoryInterface::class);
         $mockRepository->shouldReceive('paginate')
-                        ->once()
-                        ->andReturn($this->mockPagination());
+            ->once()
+            ->andReturn($this->mockPagination());
 
         return $mockRepository;
     }

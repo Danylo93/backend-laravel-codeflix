@@ -19,11 +19,11 @@ class DeleteCastMermberUseCaseUnitTest extends TestCase
 
         $mockRepository = Mockery::mock(stdClass::class, CastMemberRepositoryInterface::class);
         $mockRepository->shouldReceive('delete')
-                            ->once()
-                            ->andReturn(true);
+            ->once()
+            ->andReturn(true);
 
         $mockInputDto = Mockery::mock(CastMemberInputDto::class, [$uuid]);
-                            
+
         $useCase = new DeleteCastMemberUseCase($mockRepository);
         $response = $useCase->execute($mockInputDto);
 

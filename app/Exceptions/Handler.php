@@ -45,14 +45,17 @@ class Handler extends ExceptionHandler
 
     public function render($request, Throwable $e)
     {
-        if ($e instanceof NotFoundException)
+        if ($e instanceof NotFoundException) {
             return $this->showError($e->getMessage(), Response::HTTP_NOT_FOUND);
+        }
 
-        if ($e instanceof EntityValidationException)
+        if ($e instanceof EntityValidationException) {
             return $this->showError($e->getMessage(), Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
 
-        if ($e instanceof NotificationException)
-            return $this->showError($e->getMessage(), Response::HTTP_UNPROCESSABLE_ENTITY); // ok => HTTP_INTERNAL_SERVER_ERROR
+        if ($e instanceof NotificationException) {
+            return $this->showError($e->getMessage(), Response::HTTP_UNPROCESSABLE_ENTITY);
+        } // ok => HTTP_INTERNAL_SERVER_ERROR
 
         return parent::render($request, $e);
     }
@@ -60,7 +63,7 @@ class Handler extends ExceptionHandler
     private function showError(string $message, int $statusCode)
     {
         return response()->json([
-            'message' => $message
+            'message' => $message,
         ], $statusCode);
     }
 }
