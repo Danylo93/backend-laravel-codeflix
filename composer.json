@@ -1,22 +1,30 @@
 {
-    "name": "fullcycle/app-php",
-    "authors": [
-        {
-            "name": "Danylo Oliveira",
-            "email": "danylo.oliveira73@gmail.com"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Core\\": "src/Core/"
-        }
-    },
-    "require-dev": {
-        "pestphp/pest": "^2.28"
-    },
-    "config": {
-        "allow-plugins": {
-            "pestphp/pest-plugin": true
-        }
+  "name": "fullcycle/app-php",
+  "authors": [
+    {
+      "name": "Danylo Oliveira",
+      "email": "danylo.oliveira73@gmail.com"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Core\\": "src/Core/"
+    }
+  },
+  "require-dev": {
+    "pestphp/pest": "^2.5",
+    "mockery/mockery": "^1.5"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "scripts": {
+    "test": "./vendor/bin/pest"
+  },
+  "require": {
+    "ramsey/uuid": "^4.7",
+    "fakerphp/faker": "^1.21"
+  }
 }
